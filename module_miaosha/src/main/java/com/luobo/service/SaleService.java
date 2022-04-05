@@ -98,4 +98,8 @@ public class SaleService {
     public void deleteStockPO(StockPO stockPO){
         stockDao.delete(stockPO);
     }
+
+    public void tryCommend(){
+        System.out.println("test");
+    }
 }
