@@ -1,0 +1,27 @@
+server:
+  port: 9090
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  #通用的数据源配置
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+  jpa:
+  #将默认的存储引擎切换为 InnoDB
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  #配置在日志中打印出执行的 SQL 语句信息。
+    show-sql: false
+    hibernate:
+    #配置指明在程序启动的时候要删除并且创建实体类对应的表
+    # validate 加载 Hibernate 时，验证创建数据库表结构
+    # create 每次加载 Hibernate ，重新创建数据库表结构，这就是导致数据库表数据丢失的原因。
+    # create-drop 加载 Hibernate 时创建，退出是删除表结构（退出是指退出sessionFactory）
+    # update 加载 Hibernate 自动更新数据库结构
+    # none 不启用
+      ddl-auto: none
